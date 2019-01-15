@@ -4,14 +4,17 @@ div.innerHTML = "";
 var tableElt = document.createElement("table");//plateau
 tableElt.id="plateau";
 
+var plateau = new Array();
+
 for(var i =0;i<6;i++){
         var trElt=document.createElement("tr");
-        for(var j=0;j<7;j++){
-            var tdElt=document.createElement("td");
-            tdElt.dataset.column = j;
-
-            trElt.appendChild(tdElt);
-      }
+        plateau[i]=new Array();
+          for(var j=0;j<7;j++){
+              var tdElt=document.createElement("td");
+              tdElt.dataset.column = j;
+              trElt.appendChild(tdElt);
+              plateau[i][j]=tdElt;
+        }
       document.getElementById("message").appendChild(trElt);
 }
 
@@ -20,6 +23,13 @@ document.addEventListener("click", function (event){
       console.log(event.target);
       console.log(parseInt(document.getElementById("message").dataset.column));
       console.log(document.getElementById("message").dataset.column);
+
+      plateau.forEach(function (plato){
+      console.log(plato);
+
+      plateau[0][0].className="joueur1";
+      plateau[5][0].className="joueur2";
+      });
   });
 /*
 var maTable = [[3, 42],[100], "Chaîne de caractères"];
