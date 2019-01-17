@@ -4,6 +4,10 @@ td {
   height: 50px;
   border-style: solid;
   border-radius: 50px;
+  cursor: pointer;
+
+
+
 }
 tr{
   background-color: black;
@@ -13,4 +17,13 @@ td.joueur1 {
 }
 td.joueur2 {
   background-color: yellow;
+}
+td:hover {
+  background-color: red;
+}
+
+table {
+  /*border-collapse: collapse;*/
+  background-color: black;
+
 }
