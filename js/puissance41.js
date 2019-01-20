@@ -1,41 +1,25 @@
 var div = document.querySelector("#message");
 div.innerHTML = "";
 
-function creationPlateauJeu(){
-        var tableElt = document.createElement("table");
-        tableElt.id="plateau";
-        var plateau = new Array();
+var tableElt = document.createElement("table");//plateau
+tableElt.id="plateau";
 
-        for(var i =0;i<6;i++){
-                var trElt=document.createElement("tr");
-                plateau[i]=new Array();
-                        for(var j=0;j<7;j++){
-                                var tdElt=document.createElement("td");
-                                tdElt.dataset.column = j;
-                                tdElt.className="hoverJoueur1";
-                                trElt.appendChild(tdElt);
-                                plateau[i][j]=tdElt;
-                        }
-                tableElt.appendChild(trElt);
+var plateau = new Array();
+
+for(var i =0;i<6;i++){
+        var trElt=document.createElement("tr");
+        plateau[i]=new Array();
+          for(var j=0;j<7;j++){
+              var tdElt=document.createElement("td");
+              tdElt.dataset.column = j;
+              tdElt.className="hoverJoueur1";
+              trElt.appendChild(tdElt);
+              plateau[i][j]=tdElt;
         }
-                document.getElementById("message").appendChild(tableElt);
-}// fin function creationPlateauJeu()
-creationPlateauJeu();
-
-
-var colonne;
-function clique(event){
-          colonne=event.target.cellIndex;
-    console.log("J'ai cliquer dans la table :)");
-    console.log(event.target.cellIndex);
-  //document.getElementById("plateau").removeEventListener("click", clique);
+      //document.getElementById("message").appendChild(trElt);
+      tableElt.appendChild(trElt);
 }
-document.getElementById("plateau").addEventListener("click", clique);
-// document.getElementsByTagName("TR").addEventListener("click", clique);
-// main
-//creationPlateauJeu();
-
-/*
+        document.getElementById("message").appendChild(tableElt);
 
 var colonne;
 var tour="joueur1";//pour colorier la premiere case qui a q"une seule class
@@ -63,7 +47,7 @@ document.addEventListener("click", function (event){
                                                     if(compteur===3){console.log("GAGNE !!!");break;}else{compteur=0;}
                                                     break;}
                             }
-
+                        //*/
                     //fin test
                     switch(tour){
                           case "joueur1":
@@ -92,4 +76,28 @@ document.addEventListener("click", function (event){
 
   });
 
+    
+
+
+
+
+
+
+
+
+
+  /*
+  plateau.forEach(function (plato){
+    console.log(plato);
+    //console.log(plato.classList.length);
+  });// Fin du forEach
+  */
+  /*
+  for(var i =0;i<6;i++){
+            for(var j=0;j<7;j++){
+                console.log(plateau[i][j]);
+                plateau[i][j].classList.replace("hoverJoueur1","hoverJoueur2");
+// div.classList.replace("foo", "bar");
+          }
+  }
   */

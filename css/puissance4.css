@@ -5,9 +5,7 @@ td {
   border-style: solid;
   border-radius: 50px;
   cursor: pointer;
-
-
-
+  border-color: black;
 }
 tr{
   background-color: black;
@@ -18,12 +16,13 @@ td.joueur1 {
 td.joueur2 {
   background-color: yellow;
 }
-td:hover {
-  background-color: red;
-}
-
 table {
   /*border-collapse: collapse;*/
   background-color: black;
-
+}
+td.hoverJoueur1:hover {
+  background-color: red;
+}
+td.hoverJoueur2:hover{
+  background-color: yellow;
 }
