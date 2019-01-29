@@ -22,7 +22,7 @@ function clique(event){
     modifierClassPourCss();
   //  testLigne();
   //  testColonne();
-    testHorizontal();
+    testDiagonalBasGauche();
 };
 
 function creationPlateauJeu(){
@@ -177,31 +177,15 @@ function testColonne(){
                 }
 }*/
 };
-function testHorizontal(){
-/*  var colonneIncrementee=colonne; // sinon j ne bouge pas et revien a son pôint de départ alors que i++
-  //  if(plateau[i][colonne].classList.length===1)
-          for(var i=ligne;i>0;i--){
-                  console.log("test horizontal i vaut : "+i);
-                  for(var j=colonne;j<6;j++){
-                          console.log("test horizontal j vaut : "+j);
-                          if(plateau[i-1][j+1].classList.length>1 && plateau[i][j].className===plateau[i-1][j+1].className){
-                            console.log("plateau[i][j].className vaut : "+plateau[i][j].className);
-                            console.log("plateau[i-1][j+1].className vaut : "+plateau[i-1][j+1].className);
-                            console.log("test horizontal i et j pareil : ");
-                          }else{
+function testDiagonalBasGauche(){
+          var colonneIncrementee=colonne;
+          for(var i=ligne;i>0;i++){
+                  if(plateau[i+1][colonneIncrementee-1].classList.length>1 && plateau[i][colonneIncrementee].className===plateau[i+1][colonneIncrementee-1].className){
+                          compteur++;
+                          colonneIncrementee--;
 
-                            break;
-                          }
-                  }
+                  }else{compteur=0;break;}
           }
-*/
-var colonneIncrementee=colonne;
-for(var i=ligne;i>0;i--){
-        if(plateau[i-1][colonneIncrementee+1].classList.length>1 && plateau[i][colonneIncrementee].className===plateau[i-1][colonneIncrementee+1].className){
-                compteur++;
-                colonneIncrementee++;
-        }else{colonneIncrementee++;}
-}
 
 
 }
