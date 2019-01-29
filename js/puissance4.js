@@ -20,9 +20,12 @@ function clique(event){
     //document.getElementById("plateau").removeEventListener("click", clique);
     colorierCase();
     modifierClassPourCss();
-  //  testLigne();
-  //  testColonne();
+    testLigne();
+    testColonne();
     testDiagonalBasGauche();
+    testDiagonalBasdroite();
+    testDiagonalHautGauche();
+    testDiagonalHautDroite();
 };
 
 function creationPlateauJeu(){
@@ -179,13 +182,69 @@ function testColonne(){
 };
 function testDiagonalBasGauche(){
           var colonneIncrementee=colonne;
-          for(var i=ligne;i>0;i++){
+          for(var i=ligne;i<5;i++){
                   if(plateau[i+1][colonneIncrementee-1].classList.length>1 && plateau[i][colonneIncrementee].className===plateau[i+1][colonneIncrementee-1].className){
                           compteur++;
                           colonneIncrementee--;
-
+                          testGagne();
                   }else{compteur=0;break;}
           }
 
 
 }
+function testDiagonalBasdroite(){
+          var colonneIncrementee=colonne;
+          for(var i=ligne;i<5;i++){
+                  if(plateau[i+1][colonneIncrementee+1].classList.length>1 && plateau[i][colonneIncrementee].className===plateau[i+1][colonneIncrementee+1].className){
+                          compteur++;
+                          colonneIncrementee++;
+                          testGagne();
+                  }else{compteur=0;break;}
+          }
+}
+function testDiagonalHautGauche(){
+          var colonneIncrementee=colonne;
+          for(var i=ligne;i>0;i--){
+                  if(plateau[i-1][colonneIncrementee-1].classList.length>1 && plateau[i][colonneIncrementee].className===plateau[i-1][colonneIncrementee-1].className){
+                          compteur++;
+                          colonneIncrementee--;
+                          testGagne();
+                  }else{compteur=0;break;}
+          }
+
+}
+function testDiagonalHautDroite(){
+  var colonneIncrementee=colonne;
+  for(var i=ligne;i>0;i--){
+          if(plateau[i-1][colonneIncrementee+1].classList.length>1 && plateau[i][colonneIncrementee].className===plateau[i-1][colonneIncrementee+1].className){
+                  compteur++;
+                  colonneIncrementee++;
+                  testGagne();
+          }else{compteur=0;break;}
+  }
+}
+
+
+function testGagne(){
+          if(compteur===3){
+                alert("GAGNE !!!");
+                document.getElementById("plateau2").removeEventListener("click", clique);
+                //console.log("Pas pareil");
+                //break;
+                }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
