@@ -1,3 +1,19 @@
+@keyframes masuperanimation2 {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    /*transform: rotate(3600deg);*/
+    background-color: red;
+  }
+  100%{
+    background-color: yellow;
+  }
+
+
+}
+
 td {
   background-color: #D3D3D3;
   width: 50px;
@@ -9,6 +25,7 @@ td {
 }
 tr{
   background-color: black;
+  /*//animation: masuperanimation2 1s;*/
 }
 td.joueur1 {
   background-color: red;
@@ -19,10 +36,16 @@ td.joueur2 {
 table {
   /*border-collapse: collapse;*/
   background-color: black;
+  /*//animation: masuperanimation2 10s; /* On utilise "ma super animation" définie plus tôt */
+  box-shadow: 16px 16px 16px grey;
+  margin: 5% auto auto;
 }
 td.hoverJoueur1:hover {
   background-color: red;
 }
 td.hoverJoueur2:hover{
   background-color: yellow;
+}
+td{
+  animation: masuperanimation2 2s;
 }
